@@ -9,7 +9,7 @@ int binarySearch(vector<int> &, int, int, int);
 
 class Node
 {
-private:
+public:
     int data;
     Node *next;
 
@@ -25,7 +25,7 @@ public:
 class Linkedlist : public Node
 {
 private:
-    Linkedlist *HEAD;
+    Node *HEAD;
     int nodeCount;
 
 public:
@@ -38,7 +38,10 @@ public:
     void addAtStart(int data)
     {
         Node *newNode = new Node(data);
-        }
+        newNode->next = HEAD;
+        HEAD = newNode;
+        nodeCount++;
+    }
 };
 int main()
 {
@@ -72,6 +75,7 @@ int main()
                     int data;
                     cout << "ENTER DATA : ";
                     cin >> data;
+                    list.addAtStart(data);
                     break;
                 }
 
