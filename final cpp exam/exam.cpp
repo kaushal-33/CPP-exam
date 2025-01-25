@@ -38,8 +38,7 @@ public:
     void addAtStart(int data)
     {
         Node *newNode = new Node(data);
-        
-    }
+        }
 };
 int main()
 {
@@ -118,7 +117,7 @@ int main()
             cout << "ENTER VALUE TO SEARCH : ";
             cin >> key;
             int idx = binarySearch(arr, 0, size - 1, key);
-            (idx == key) ? cout << key << " is founded....!\n" : cout << key << " is not founded....!\n";
+            (arr[idx] == key) ? cout << key << " is founded....!\n" : cout << key << " is not founded....!\n";
             break;
         }
         default:
